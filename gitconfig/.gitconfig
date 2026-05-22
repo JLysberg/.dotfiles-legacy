@@ -1,12 +1,14 @@
 [alias]
   lg = log --graph --oneline --decorate --all
-  s = status
+  s = status --short
   cm = commit -m
   co = checkout
   d = diff
   ds = diff --staged
   dw = diff --word-diff
   dws = diff --staged --word-diff
+	rs = restore --staged
+	a = add
 [init]
   defaultBranch = main
 [include]
@@ -27,3 +29,5 @@
   pager = less --tabs 4
 [includeIf "gitdir:~/dev/epic/"]
   path = ~/.gitconfig.epic
+[url "git@github.ol.epicgames.net:"]
+	insteadOf = https://github.ol.epicgames.net/
