@@ -21,8 +21,22 @@ hash -d kinch=~/dev/osirion/apps/kinch-bot
 hash -d ftp=~/dev/osirion/services/fn_tournament_postprocessor
 hash -d solver=~/dev/osirion/services/solver
 
+hash -d web-a=~/dev/osirion-alt/apps/web/
+hash -d frf-a=~/dev/osirion-alt/services/fn_replay_fetcher
+hash -d fpc-a=~/dev/osirion-alt/services/fn_parsing_client
+hash -d tf-a=~/dev/osirion-alt/services/terraform
+hash -d api-a=~/dev/osirion-alt/services/api
+hash -d ai-a=~/dev/osirion-alt/services/ai
+hash -d ftb-a=~/dev/osirion-alt/services/fn_tournament_bot/
+hash -d fn-a=~/dev/osirion-alt/services/fn_api/
+hash -d kinch-a=~/dev/osirion-alt/apps/kinch-bot
+hash -d ftp-a=~/dev/osirion-alt/services/fn_tournament_postprocessor
+hash -d solver-a=~/dev/osirion-alt/services/solver
+
 hash -d os=~/dev/osirion
 hash -d ost=~/dev/_temp/osirion
+hash -d os-a=~/dev/osirion-alt
+hash -d os-aa=~/dev/osirion-aalt
 
 # nvim aliases
 alias nvo="nvim ~os"
@@ -56,6 +70,16 @@ export PATH="$PATH:/home/norlys/.dotnet/tools"
 
 export VISUAL='sh -c "nvr -cc vsplit --remote-wait \"$@\" || nvim \"$@\""' 
 export EDITOR="$VISUAL"
+
+export OBSIDIAN_VAULT="/mnt/c/Users/Jostein/Documents/obsidian"
+
+# Use a stable SSH agent socket path
+if [ -z "$SSH_AUTH_SOCK" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
+  export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+  if [ ! -S "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -a "$SSH_AUTH_SOCK" 2>/dev/null)" > /dev/null
+  fi
+fi
 
 # --------------------------------------------------
 # boilerplate:
